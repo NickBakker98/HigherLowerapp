@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".HigherLowerActivity">
+    tools:context=".HigherLowerActivity"
+    android:background="@color/Background">
 
     <ListView
         android:id="@+id/score_list"
@@ -64,7 +65,7 @@
         android:layout_height="32dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:text="Score:"
+        android:text="@string/Score"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -75,7 +76,7 @@
         android:layout_marginBottom="8dp"
         android:layout_marginStart="4dp"
         android:layout_marginTop="8dp"
-        android:text="HighScore:"
+        android:text="@string/HighScore"
         app:layout_constraintBottom_toTopOf="@+id/score_list"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Score_text"
@@ -113,7 +114,7 @@
         android:layout_height="17dp"
         android:layout_marginBottom="8dp"
         android:layout_marginStart="8dp"
-        android:text="Welcome"
+        android:text="@string/Welcome"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 

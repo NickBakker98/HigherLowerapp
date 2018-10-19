@@ -34,10 +34,11 @@ public class HigherLowerActivity extends AppCompatActivity {
     private TextView mWinLose;
     private int score;
     private int highscore;
-    private long filthyHack;
+    private long weird;
 
     Random r;
 
+    //Add a method which updates the User Interface.
     private void updateUI() {
         if (mAdapter == null) {
             mAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, mThrows);
@@ -79,18 +80,18 @@ public class HigherLowerActivity extends AppCompatActivity {
                     lastScore = (int) mImageNames[r.nextInt(mImageNames.length)];
                 } while (lastScore == previousScore);
                 //Display message which number was last thrown.
-                filthyHack = (long) lastScore - 2131165275;
-                mThrows.add("Throw is: " + String.valueOf(filthyHack));
+                weird = (long) lastScore - 2131165275;
+                mThrows.add("Throw is: " + String.valueOf(weird));
                 mDiceImage.setImageResource(lastScore);
                 //Check with if-else statement if you won or lost. In case of a win, you get a point
                 if (lastScore < previousScore) {
-                    mWinLose.setText("You Win");
+                    mWinLose.getResources().getString(R.string.Win);
                     score++;
                     if (score > highscore)
                         highscore = score;
                 }
                 else {
-                    mWinLose.setText("You Lose");
+                    mWinLose.getResources().getString(R.string.Lose);
                     score = 0;
                 }
                 previousScore = lastScore;
@@ -109,19 +110,19 @@ public class HigherLowerActivity extends AppCompatActivity {
                   //Random image from dice images will be generated
                     lastScore = (int) mImageNames[r.nextInt(mImageNames.length)];
                 } while (lastScore == previousScore);
-                filthyHack = (long) lastScore - 2131165275;
-                mThrows.add("Throw is: " + String.valueOf(filthyHack));
+                weird = (long) lastScore - 2131165275;
+                mThrows.add("Throw is: " + String.valueOf(weird));
                 mDiceImage.setImageResource(lastScore);
-                //Check with if-else statement if you won or lost. In case of a win, you get a point
 
+                //Check with if-else statement if you won or lost. In case of a win, you get a point
                 if (lastScore > previousScore) {
-                    mWinLose.setText("You Win");
+                    mWinLose.getResources().getString(R.string.Win);
                     score++;
                     if (score > highscore)
                         highscore = score;
                 }
                 else {
-                    mWinLose.setText("You Lose");
+                    mWinLose.getResources().getString(R.string.Lose);
                     score = 0;
                 }
                 previousScore = lastScore;
@@ -132,4 +133,3 @@ public class HigherLowerActivity extends AppCompatActivity {
         });
     }
 }
- 
